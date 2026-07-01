@@ -1,7 +1,7 @@
 # iPhonian
 Um iPadian para Android
-#Leia!
+# Leia!
 isso foi criado por uma criança e nao pode funcionar corretamente
-Para usar precisa de:
-Android 7 ou mais
-internet [:
+# Para usar precisa de:
+Android 7 ou mais;
+internet.
