@@ -1,0 +1,164 @@
+// Helpers
+@function get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+
+*,
+*:before,
+*:after {
+	position: relative;
+	box-sizing: border-box;
+}
+
+*::before,
+*::after { content: ''; }
+
+html,
+main,
+body {
+	height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+	font-size: 1.618rem;
+}
+
+.flex {
+  display: flex;
+  &--total-center {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Functional Classes
+
+/// Widths
+.stretch { width: 100%; }
+
+/// Flexbox
+.flex-shrink0 {
+	flex-shrink: 0;
+}
+.flex-full { flex-basis: 100%; }
+
+/// Typography
+.text-uppercase { text-transform: uppercase }
+.font-weight700 { font-weight: 700; }
+.lh {
+	&1 { line-height: 1; }
+}
+
+.text-indent {
+	text-indent: 1.412rem;
+	&-n3 {
+		text-indent: -2.5rem;
+	}
+}
+
+.letter-spacing {
+	&1 { letter-spacing: .1rem; }
+}
+
+.caps-xs {
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+}
+
+/// Background Colors
+.bg-color {
+	&-white {
+		&-tc15 { background-color: hsla(0,0%,100%,.15) }
+		&-tc25 { background-color: hsla(0,0%,100%,.25) }
+		
+		&-on-hover {
+			&-tc25:hover {
+				background-color: hsla(0,0%,100%,.25)
+			}
+		}
+	}
+}
+
+/// Colors
+.color-white { color: hsla(0, 0%, 100%, 1); }
+.color {
+	&-white-tc15 { color: hsla(0,0%,100%, .15); }
+	&-white-tc25 { color: hsla(0,0%,100%, .25); }
+	&-dark-tc25 { color: hsla(0,0%,0%, .25); }
+}
+
+/// Misc.
+.cursor-pointer { cursor: pointer; }
+
+/// Border Radii
+.rounded-heavily { border-radius: 7.2rem; }
+
+/// States
+.fades-in-on-hover {
+	opacity: .5;
+	transition: opacity 500ms;
+	&:hover { opacity: 1; }
+}
+
+.opaque { opacity: 1; }
+
+.outline-none,
+.outline-none:focus {
+	outline: none;
+}
+
+/// Shadows
+.box-shadow {
+	box-shadow: 0 0 10px 0 hsla(0,0%,0%,.22);
+}
+
+/// Borders
+.border {
+	&-bottom {
+		&2 { border-bottom: 2px solid; }
+	}
+}
+
+/// Transitions
+.ease-in-out {
+	transition-timing-function: ease-in-out;
+}
+
+.transition-all {
+	&250 { transition: all 250ms; }
+	&500 { transition: all 500ms; }
+}
+
+.transition-color {
+	&250 { transition: color 250ms; }
+	&500 { transition: color 500ms; }
+}
+
+.transition-bg-color {
+	&250 { transition: background-color 250ms; }
+	&500 { transition: background-color 500ms; }
+}
+
+.transition-fade-enter-active,
+.transition-fade-leave-active {
+  transition: opacity 480ms ease;
+}
+.transition-fade-enter,
+.transition-fade-leave-active { opacity: 0; }
+
+/// Opacity
+.opacity {
+	&50 {
+		opacity: .50
+	}
+}
+
+

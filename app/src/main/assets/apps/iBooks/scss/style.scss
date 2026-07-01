@@ -1,0 +1,200 @@
+/*
+|----------------------------------------------------
+| Book UI Component: A Study
+|----------------------------------------------------
+*/
+
+// A little preparation first
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  padding: 3.2rem;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/16584/retina_wood.png');
+  perspective: 1800px;
+  perspective-origin: left center;
+}
+
+[slot] { height: 100%; }
+
+// To ease up layouting a little, I use flexbox
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+/*
+|----------------------------------------------------
+| The book itself
+|----------------------------------------------------
+| One special thing to notice is the different use
+| of shadows. Instead of just one, generic shadow
+| I wanted to simulate different shadows when
+| lifting, tilting and flipping a book.
+| Try hovering, pressing down and clicking to tilt,
+| lift and flip one of the books (or both).
+*/
+.v-book {
+  $v-default-transition: 480ms ease-in-out;
+  $v-shadow-when-not-lifted: 3px 3px 15px hsla(0, 0%, 0%, .25);
+  $v-shadow-when-lifted: 30px 16px 40px hsla(0, 0%, 0%, .15);
+  $v-shadow-when-lifted-and-flipped: -30px 16px 40px hsla(0, 0%, 0%, .15);
+  $v-shadow-when-tilted: 15px 8px 20px hsla(0, 0%, 0%, .25);
+  
+  flex-shrink: 0;
+  margin: 3.618rem;
+  width: 22.1rem;
+  height: 29.97rem;
+  transform-style: preserve-3d;
+  transition: all $v-default-transition;
+  cursor: pointer;
+  
+  &.is-flipped {
+    transform: translate3d(0, 0, 140px) rotate3d(0, 1, 0, 180deg);
+    
+    .v-book__cover.is-back {
+      box-shadow: $v-shadow-when-lifted-and-flipped;
+    }
+  }
+  
+  &:not(.is-flipped) {
+    &:hover {
+      transform: translate3d(0, 0, 0) rotate3d(0, 1, 0, 25deg);
+      .v-book__cover.is-back {
+        box-shadow: $v-shadow-when-tilted;
+      }      
+    }
+    &:active {
+      transform: translate3d(0, 0, 140px) rotate3d(0, 1, 0, 25deg);
+      z-index: 100;
+      user-select: none;
+      .v-book__cover.is-back {
+        box-shadow: $v-shadow-when-lifted;
+      }      
+    }
+  }
+  
+  &.has-groove .v-book__cover::after {
+    $groove-shadow: 0 2px 0 hsla(0, 0, 0, .05);
+    position: absolute;
+    top: 0;
+    left: 3px;
+    height: 100%;
+    width: 10px;
+    box-shadow:
+      3px $groove-shadow inset,
+      -3px $groove-shadow inset;
+    content: '';
+  }
+  
+  &.has-groove .v-book__cover.is-back::after {
+    left: auto;
+    right: 3px;
+  }
+  
+  &__cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 3.236rem;
+    background-color: white;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: box-shadow $v-default-transition;
+    
+    &.is-front {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      transform-origin: 0% 50%;
+      transform: translate3d(0, 0, 5px);
+      transition: transform $v-default-transition;
+      z-index: 10;
+      border-radius: 1px 3px 2px 1px;
+    }
+    
+    &.is-back {
+      transform: rotate3d(0, 1, 0, -180deg) translate3d(0, 0, 6px);
+      box-shadow: $v-shadow-when-not-lifted;
+      background-color: white;
+      border-radius: 3px 1px 2px 2px;
+    }
+  }
+  
+  @mixin spineBase {
+    position: absolute;
+    top: 0;
+    left: -7px;
+    width: 14px;
+    height: 100%;
+    transform: rotate3d(0, 1, 0, -90deg);   
+  }  
+  
+  &__spine {
+    @include spineBase;
+    background-color: white;
+  }
+  
+  &__obi {
+    position: absolute;
+    left: -1%;
+    bottom: 15px;
+    padding: 1.618rem;
+    width: 102.5%;
+    height: 80px;
+    background-color: hsla(0,0,100%,.75);
+    box-shadow: 0 2px 3px 0 hsla(0,0,0,.1);
+    transform: translate3d(0, 0, 6px);
+    transform-style: inherit;
+    z-index: 1;
+    border-radius: 1px;
+    
+    &.is-back {
+      transform: rotate3d(0, 1, 0, -180deg) translate3d(0, 0, 6px);
+    }
+    
+    // Obi Spine
+    &::after {
+      @include spineBase;
+      background-color: inherit;
+      box-shadow: inherit;
+      content: '';
+    }
+  }
+  
+  &__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+  
+  &__subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  &__description {
+    font-size: 1.412rem;
+    margin: 0;
+  }
+}
+
+/*
+|----------------------------------------------------
+| A little loader. Hopefully you won't even see it
+|----------------------------------------------------
+*/
+.v-loader {
+  position: absolute;
+  font-size: 72px;
+  opacity: 0;
+  animation: pulse 800ms alternate infinite;
+  
+  @keyframes pulse {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}

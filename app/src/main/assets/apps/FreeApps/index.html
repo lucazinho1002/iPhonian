@@ -1,0 +1,550 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../../css/framework7.ios.min.css">
+<link rel="stylesheet" href="../../css/framework7.ios.colors.min.css">
+<link rel="stylesheet" href="../../css/my-app.css">
+<script src="jquery-min.js"></script>
+
+<!-- Links popover -->
+  
+<style>
+.progressbar, .progressbar-infinite {
+    height: 2px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    background: #b6b6b6;
+    border-radius: 2px;
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+    
+.progressbar span {
+    width: 100%;
+    background: #007aff;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+   
+}    
+    
+</style> 
+
+<div class="popup first_page">
+         <div class="content-block">
+             <div class="gd">
+            
+                  
+                 
+                 
+             <img class="dpic" src="http://is2.mzstatic.com/image/thumb/Purple62/v4/18/ab/f2/18abf2cb-ba30-54e1-5980-7632f74d5c36/mzl.nfafcuuq.png/100x100bb-85.png" width="100px" height="100px"/>
+             <div class="holder">
+             <vtitl>Whatsapp</vtitl><rt>4.3</rt>     
+             <vartist>WhatsappCompany<img src="../../icons/n1.png" width="12px" /></vartist>
+             <stars><span id="str" class="rating-static "></span></stars>
+               
+                <p><span  class="progressbar"><span id="barp"></span></span></p>
+                 
+            </div>
+            </div>
+        
+             
+         </div>
+      </div>
+   
+
+
+          <!-- Tabs, now tabs wrapper is "views" -->
+<div class="views tabs toolbar-fixed">
+  <!-- Tab 1 - View 1, active by default -->
+  
+
+  <!-- Tab 2 - View 3 -->
+  <div id="tab3" class="view tab active">
+    
+      <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+            <div id="tit" class="center sliding">iPadian Free Apps</div>
+            
+          </div>
+        </div>
+      <div class="pages navbar-fixed">
+      <div data-page="home-2" class="page">
+        <div class="page-content">
+  
+    <!-- Each "cell" has col-[widht in percents] class -->
+    
+       
+     <div class="list-block media-list">
+  <ul id="search">
+    
+  </ul>
+                 
+                            
+                  
+    </div>
+    
+   
+          </div></div></div>
+      
+      
+      
+      
+  </div>
+                  
+  
+          <style>
+        
+              .expview {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1px;
+}
+              
+    @font-face {
+  font-family: "San Francisco2";
+  font-weight: 100;
+  src: url("../../assets/fonts/SF-UI-Text-Ultrathin.otf");
+}
+
+@font-face {
+  font-family: "San Regular";
+  font-weight: 100;
+  src: url("../../assets/fonts/SF-UI-Text-Regular.otf");
+}
+              
+              body{
+              font-family: "San Regular";
+              
+              }
+              
+    slide {
+    width: 100%;
+    height: 261px;
+    display: block;
+    }
+              .swiper-container{
+              
+               height: 260px;
+              }          
+              slide img{
+              height: 260px;
+               width: 680px; 
+                  float: left;
+              }          
+          
+    i.featured {
+    width: 25px;
+    height: 30px;
+    background-image: url(ico/star.png);
+        
+              }
+             .active i.featured{
+              
+              background-image: url(ico/starblue.png);
+              }          
+     i.topcharts {
+    width: 25px;
+    height: 30px;
+    background-image: url(icons/list-simple-star-7.png);
+              }
+              .active i.topcharts {
+              background-image: url(ico/listblue.png);
+              }
+     i.explore {
+    width: 25px;
+    height: 30px;
+    background-image: url(icons/share-7.png);
+              }
+              
+     i.updates {
+    width: 25px;
+    height: 30px;
+    background-image: url(ico/explore.png);
+              } 
+    .active i.updates{
+              
+              background-image: url(ico/eblue.png);
+              }               
+    img.appicon {
+    width: 85px;
+    border-radius: 20px;
+        display: block;    
+    }
+    apptitle {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+        color: grey;
+        overflow: hidden;
+    height: 20px;    
+}
+              
+              appcat {
+    display: block;
+    font-size: 12px;
+    color: grey;
+}
+              
+              apprice {
+    font-size: 12px;
+    display: block;
+        color: grey;
+}
+              
+              .ido {
+    width: 85px;
+    float: left;
+    margin: 10px;
+}
+        .ss {
+    height: 165px !important;
+    
+            border-bottom-width: 1px;
+    border-bottom-style: inset;
+    border-bottom-right-radius: 7px;
+            
+}  
+        .navbar, .toolbar {
+    backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.77);        
+}      
+              .page{
+              
+                  background: #fff
+              
+              }       
+              
+           input[type="search"] {
+    border: 0px;
+    height: 30px;
+    border-radius: 3px;
+    padding: 15px;
+    background: #e1e2e7;
+    color: white;
+    text-align: center;
+    background-image: url(icons/search-7.png);
+    background-repeat: no-repeat;
+    background-position-x: 38px;
+    background-size: 12px 12px;
+    background-position-y: 10px;
+}
+      .gd {
+    display: grid;
+    grid-template-columns: 112px auto 25px;
+}   
+              
+              vtitl {
+    display: inline-block;
+    font-size: 26px;
+        overflow: hidden;
+    height: 28px;
+    max-width: 417px;              
+}
+              
+vartist {
+    display: block;
+    font-size: 14px;
+}              
+       
+              img.dpic {
+    border-radius: 20px;
+}
+      
+    
+    .rating-static {
+  width: 60px;
+  height: 16px;
+  display: block;
+  background: url('http://www.itsalif.info/blogfiles/rating/star-rating.png') 0 0 no-repeat;
+}
+              
+              .rating-50 { background-position: 0 0; }
+.rating-40 { background-position: -12px 0; } 
+.rating-30 { background-position: -24px 0; }
+.rating-20 { background-position: -36px 0; }
+.rating-10 { background-position: -48px 0; }
+.rating-0 { background-position: -60px 0; }
+ 
+.rating-5  { background-position: -48px -16px; }
+.rating-15 { background-position: -36px -16px; }
+.rating-25 { background-position: -24px -16px; }
+.rating-35 { background-position: -12px -16px; }
+.rating-45 { background-position: 0 -16px; }
+
+    a.button.get {
+    width: 60px;
+    margin-top: 3px;    
+}
+              
+.get span {
+    font-size: 13px;
+    position: relative;
+    top: -8px;
+    left: -10px;
+}
+
+bb {
+    position: relative;
+    top: 0px;
+    left: -4px;
+}
+            .kak {
+    margin: 20px;
+    margin: 0 auto;
+    width: 300px;
+    margin-top: 20px;
+}   
+              
+              .content-block.ski {
+    height: 373px;
+    overflow: scroll;
+}
+     rt {
+    color: rgba(128, 128, 128, 0.44);
+    width: 40px;
+    margin: 5px;
+    position: relative;
+}         
+              
+.item-media img {
+    border-radius: 20px;
+}    
+              
+              a.button.get.cin {
+    position: relative;
+    top: -100px;
+    float: right;
+        width: 70px;              
+                  
+}
+
+              appk {
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-template-rows: 80px 200px;
+}
+              ul#search {
+    display: grid;
+    grid-template-columns:  auto auto ;
+    grid-column-gap: 20px;
+    justify-items: center;
+}
+     .item-title {
+    width: 340px;
+         margin-right: 100px
+     }
+              
+              .list-block .item-inner:after{
+              background: none;
+              }
+              
+             #search li {
+    box-sizing: border-box;
+    position: relative;
+    border-bottom-width: 1px;
+    border-bottom-style: inset;
+    border-bottom-right-radius: 7px;
+    height: 100px;
+}
+              
+                           
+#freeapps li, #payed li {
+    box-sizing: border-box;
+    position: relative;
+    border-bottom-width: 1px;
+    border-bottom-style: inset;
+    border-bottom-right-radius: 7px;
+    
+}
+              
+             #tab3 .list-block {
+    margin: 0px 0;
+
+}
+              
+    </style>
+          
+          
+  <div class="toolbar tabbar tabbar-labels">
+    <div class="toolbar-inner">
+        <a href="#tab1" class="tab-link active">
+            <i class="icon featured"></i>
+            <span class="tabbar-label">Free Apps</span>
+        </a>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="../../js/framework7.min.js"></script>
+<script type="text/javascript" src="../../js/my-app.js"></script>
+<script>
+
+    
+    // Initialize app
+var myApp = new Framework7();
+ 
+// If we need to use custom DOM library, let's save it to $$ variable:
+var $$ = Dom7;
+    
+ // const app2 = require('electron').remote;
+//      alert("ok");
+//'const path2 = require('path');
+//'const zipkit = require('node-zipkit');
+
+//zipkit.unzip(path.join(__dirname, 'ico.zip'), path.join(__dirname, 'test')).then(function(directoryPath) {
+//  console.log('extract', directoryPath, 'success.');
+//    alert("ok");
+//});
+
+    
+const app2 = require('electron').remote;
+    app2.getCurrentWebContents().toggleDevTools();  
+    const app = require('electron').remote.app;
+    var path = app.getAppPath();
+
+  var fs = require('fs');
+var request = require('request');
+var progress = require('request-progress');
+const zipkit = require('node-zipkit'); 
+var remotef = require('remote-file-size');
+ const path2 = require('path');
+   var filename = "kooo"; 
+    var kk;
+    var cm;
+    function loadapp(url){
+    cm = url;
+    kk = url.substring(url.lastIndexOf("/")+ 1);
+        //alert(filename)
+// The options argument is optional so you can omit it 
+progress(request(url), {
+    throttle: 1000,                    // Throttle the progress event to 2000ms, defaults to 1000ms 
+    delay: 1000,                       // Only start to emit after 1000ms delay, defaults to 0ms 
+    lengthHeader: 'x-transfer-length'  // Length header to use, defaults to content-length 
+})
+.on('progress', function (state) {
+    // The state is an object that looks like this: 
+    // { 
+    //     percentage: 0.5,           // Overall percentage (between 0 to 1) 
+    //     speed: 554732,             // The download speed in bytes/sec 
+    //     size: { 
+    //         total: 90044871,       // The total payload size in bytes 
+    //         transferred: 27610959  // The transferred payload size in bytes 
+    //     }, 
+    //     time: { 
+    //         elapsed: 36.235,      // The total elapsed seconds since the start (3 decimals) 
+    //         remaining: 81.403     // The remaining seconds to finish (3 decimals) 
+    //     } 
+    // } 
+    var total = 15728640;
+    remotef(url, function(err, o) {
+  total = o;
+        console.log(o);
+  // => 1548 
+    })
+    
+    //var total = 15728640;
+    var speed = state.size.transferred;
+    much = (speed/total) * 100;
+    var prog = Math.round(much);
+    console.log(Math.round(much));
+    $("#barp").css("width",prog+"%");
+    
+    console.log('progress', state);
+})
+.on('error', function (err) {
+    // Do something with err 
+}).on('end', function () {
+    // Do something after request finishes
+    kk = cm.substring(cm.lastIndexOf("/")+ 1);
+;
+    $("#barp").css("width","100%");
+    zipkit.unzip(path+'/'+kk , path+"/MaciPadian/apps/").then(function(directoryPath) {
+  console.log('extract', directoryPath, 'success.');
+        app2.getCurrentWindow().webContents.executeJavaScript("reboot();");
+        myApp.alert('App Installed !!','iPadian Store');
+    //alert("ok");
+    });
+})
+.pipe(fs.createWriteStream(path+'/'+kk));
+    
+    }
+//var download = require('bestikk-download');
+ 
+  
+   
+     $( document ).ready(function() {
+        
+         
+         //topnew("http://itunes.apple.com/us/rss/topfreeapplications/limit=25/genre=6014/json","topnew");
+         //topnew("http://itunes.apple.com/us/rss/topgrossingipadapplications/limit=25/json","tops");
+         //topnew("http://itunes.apple.com/us/rss/topfreeapplications/limit=25/genre=6005/json","comm");
+        //topgross();
+        //topnew();
+        //comm("http://itunes.apple.com/us/rss/topfreeapplications/limit=10/json","freeapps");
+        //comm("http://itunes.apple.com/us/rss/toppaidapplications/limit=10/json","payed"); 
+         search("pokemon");
+         //getapp(); 
+        });
+    
+
+ 
+   $(document).on( "click",".appclick", function() {
+      
+       //myApp.alert("fff");
+       
+        $(".dpic").attr("src",$(this).find("img").attr("src"));
+        $("vtitl").text($(this).find(".tito").text());
+         $("vartist").text($(this).find(".item-subtitle").text());
+       link = $(this).attr("data-link");
+       loadapp(link);
+        $("#barp").css("width","0%");
+   });
+   
+    
+     function getapp(id){
+        
+         //loadapp(id);
+        
+     }    
+    
+     
+    function search(di){
+        
+            //$.getJSON("https://itunes.apple.com/search?term="+di+"&country=us&entity=software ", function( data ) {
+        $.getJSON("http://xpadian.com/apps/apps.json", function( data ) {
+            //console.log(data.feed.entry["0"]["im:name"].label);
+            
+            
+          
+                    $.each(data.results, function(i,item){
+                        
+                        var l1 =  data.results[i].trackName  ;
+                        var c1 =  data.results[i].primaryGenreName ;  
+                        var img1 = data.results[i].artworkUrl100;
+                         var bid = data.results[i].trackId ;
+                        $("#search").append('<li class="open-popup appclick" data-link="'+bid+'" data-popup=".first_page"><a href="javascript:getapp('+bid+')" class="item-link item-content"><div class="item-media"><img src="'+img1+'" width="80"></div><div class="item-inner"><div class="item-title"><div class="item-title tito">'+l1+'</div></div><div class="item-subtitle">'+c1+'</div><div class="item-text"><span id="str" class="rating-static "></span></div></div></a><a href="#" class="button get cin"><span>+</span><bb>GET</bb></a></li>');
+                                              
+                       // $(".text-"+tot).text(i+". "+l1);
+                       // $(".text-"+cc).text(c1);
+                        
+
+                    });
+            });
+    }
+    
+
+    
+    
+</script>
+ 

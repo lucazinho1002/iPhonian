@@ -1,0 +1,117 @@
+body {
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0em;
+}
+
+*:focus {
+  outline: 0;
+}
+
+.calculator {
+  position: relative;
+  margin: 10% auto;
+  width: 231px;
+  height: 320px;
+  background: rgba(75, 75, 75, 0.65);
+  border-right: 1px solid #646464;
+  border-bottom: 1px solid #343434;
+  border-left: 1px solid #646464;
+  border-top: 1px solid #939393;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-box-shadow: 0 0 20px 0 rgba(50, 50, 50, 0.75);
+  -webkit-box-shadow: 0 0 20px 0 rgba(50, 50, 50, 0.75);
+  box-shadow: 0 0 20px 0 rgba(50, 50, 50, 0.75);
+  cursor: arrow;
+}
+
+.readout {
+  font-size: 45px;
+  color: #ffffff;
+  background: transparent;
+  box-sizing: border-box;
+  display: block;
+  width: inherit;
+  border: 0;
+  margin: 28px 0 0 0;
+  text-align: right;
+  padding: 0 10px;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+
+.keys {
+  position: absolute;
+  bottom: 0;
+}
+
+.row {
+  padding-top: 1px;
+  clear: both;
+}
+.row .key:first-child {
+  margin-left: 0px;
+}
+
+.key {
+  width: 57px;
+  height: 47px;
+  font-size: 22px;
+  border: 0;
+  float: left;
+  margin-left: 1px;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.key.double {
+  width: 115px;
+  text-align: left;
+  padding-left: 25px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.key.last {
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.misc {
+  background: #d6d6d6;
+  font-size: 20px;
+}
+.misc:active {
+  background-color: #b0b0b0;
+}
+
+.function {
+  background: #ff8c00;
+  color: #ffffff;
+  font-size: 25px;
+}
+.function:active {
+  background-color: #b36200;
+}
+
+.numeric {
+  background: #e0e0e0;
+  font-family: "HelveticaNeue-Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.numeric:active {
+  background-color: #bababa;
+}

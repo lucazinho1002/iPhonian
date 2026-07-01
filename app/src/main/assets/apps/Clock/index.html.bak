@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>World Clocks</title>
+	<meta charset="utf-8" />
+	
+	<meta name="description" content="Analog and digital world clock widgets showing times from different cities and timezones around the world." />
+	<meta name="keywords" content="world clock, analog clocks, analogue clocks, animated clocks, web clocks, timezones, london time, new york time, washington time, new york clock, london clock, html5 clock, canvas clock, javacript clock, drag and drop widget, drag and drop clock, clock widgets, time widgets" />
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="dark">
+<div id="wrap">
+	<div id="controls">
+		<h1 id="title">World Clocks</h1>
+		<button id="btn-reset">reset</button>
+		<button id="btn-theme">dark</button>
+		<button id="btn-mode">digital</button>
+		<button id="btn-hourmode" data-mode="12">12h</button>
+		<form id="add-form" action="" method="post">
+			<div>
+				<input id="zone" type="text" value="please enter a city" /> <input type="submit" class="button" id="btn-add" value="add" />
+			</div>
+		</form>
+		<div class="clear"> </div>
+	</div>
+
+	<div id="clocks"> </div>
+</div>
+<div id="loading">loading...</div>
+<noscript class="error">
+	<h1>You need to have Javascript enabled for this to work.</h1>
+</noscript>
+	
+<p id="footer">
+	<a href="http://kailashnadh.name" target="_blank">Kailash Nadh</a><br />
+	Time data provided is "as is", and is for informational purposes only. The developer is not liable for any errors in the data, or for outcomes of actions taken based on the data.
+</p>
+
+<script src="http://clock6.com/time.php"></script>
+<script src="lib.js"></script>
+
+</body>
+</html>

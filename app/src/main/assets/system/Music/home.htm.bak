@@ -1,0 +1,294 @@
+<html lang="en" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head>
+	<meta charset="UTF-8">
+	
+	<title>Stylico DJ Template by radykal</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+    <meta name="keywords" content="">
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Index CSS -->
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/style.css?v=1">
+    <link rel="stylesheet" href="css/jquery.fancyMusicPlayer-lila.css">
+    
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="css/orbit-1.2.3.css">
+    <link rel="stylesheet" href="css/prettyPhoto.css">
+    <link rel="stylesheet" href="css/soundcloud/cover-structure.css">
+    <link rel="stylesheet" href="css/soundcloud/cover-colors-blue.css">
+    
+    <!-- Index Scripts -->
+    <script async="" src="//www.google-analytics.com/ga.js"></script><script>if ( typeof window.JSON === 'undefined' ) { document.write('<script src="js/libs/json2.js"><\/script>'); }</script>
+	<script type="text/javascript" src="home_files/modernizr.min.js"></script><style type="text/css"></style>
+    <script type="text/javascript" src="home_files/jquery.min.js"></script>
+    <script type="text/javascript" src="home_files/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="home_files/amplify.store.js"></script><div style="display: none;"></div>
+    <script type="text/javascript" src="home_files/history.adapter.jquery.js"></script>
+    <script type="text/javascript" src="home_files/history.js"></script>
+    <script type="text/javascript" src="home_files/history.html4.js"></script>
+    <script type="text/javascript" src="home_files/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="home_files/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" src="home_files/soundmanager2-nodebug-jsmin.js"></script>
+    <script type="text/javascript" src="home_files/jquery.fancyMusicPlayer.min.js"></script>
+    <script type="text/javascript" src="home_files/script.min.js"></script>
+    
+    <!-- Pages Scripts -->
+    <script type="text/javascript" src="home_files/jquery.orbit-1.2.3.min.js"></script>
+	<script type="text/javascript" src="home_files/jquery.tweet.js"></script>
+    <script type="text/javascript" src="home_files/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="home_files/jquery.quicksand.js"></script>
+    <script type="text/javascript" src="home_files/soundcloud.js"></script>
+    
+</head>
+<body>
+    
+    <!-- Sidebar with navigation -->
+    <aside>
+        <div id="logo"></div>
+        
+        <!-- Main navigation -->
+        <nav>
+            <div id="menu-arrow" style="top: 77px;"></div>
+            <ul>         
+                <li><a href="home.html" style="background-image: url(http://radykal.de/themeforest/stylico/images/stylico/icons/menu_home.png); background-attachment: scroll; opacity: 0.5; background-position: 12px 7px; background-repeat: no-repeat no-repeat;">Home</a></li>
+                <li><a href="biography.html" style="background-image: url(http://radykal.de/themeforest/stylico/images/stylico/icons/menu_bio.png); background-attachment: scroll; opacity: 0.5; background-position: 12px 8px; background-repeat: no-repeat no-repeat;">Biography</a></li>
+                <li><a href="discography.html" style="background-image: url(http://radykal.de/themeforest/stylico/images/stylico/icons/menu_disco.png); background-attachment: scroll; opacity: 1; background-position: 12px 8px; background-repeat: no-repeat no-repeat;">Discography</a></li>
+                <li><a href="gigs.html" style="background-image: url(http://radykal.de/themeforest/stylico/images/stylico/icons/menu_gigs.png); background-attachment: scroll; opacity: 0.5; background-position: 15px 8px; background-repeat: no-repeat no-repeat;">Gigs</a></li>
+                <li><a href="media.html" style="background-image: url(http://radykal.de/themeforest/stylico/images/stylico/icons/menu_media.png); background-attachment: scroll; opacity: 0.5; background-position: 12px 10px; background-repeat: no-repeat no-repeat;">Media</a></li>
+                <li><a href="contact.html" style="background-image: url(http://radykal.de/themeforest/stylico/images/stylico/icons/menu_contact.png); background-attachment: scroll; opacity: 0.5; background-position: 12px 11px; background-repeat: no-repeat no-repeat;">Contact</a></li>
+                <li><a href="features.html" style="background-image: url(http://radykal.de/themeforest/stylico/images/stylico/icons/menu_features.png); background-attachment: scroll; opacity: 0.5; background-position: 13px 10px; background-repeat: no-repeat no-repeat;">Template Features</a></li>
+            </ul>
+        </nav>
+        
+        <div class="divider"></div>
+        
+        <!-- MP3 Player section -->
+        <section id="mp3-player" class="fmp-container">
+            <a href="music/Fobee-7th_Gate.mp3" title="Fobee - 7th Gate" style="display: none;"></a>
+            <a href="music/Fobee-Another_Sunny_Day.mp3" title="Fobee - Another Sunny Day" style="display: none;"></a>
+            <a href="music/Fobee-Beyond_the_Horizon.mp3" title="Fobee - Beyond the Horizon" style="display: none;"></a>
+            <a href="music/Fobee-Happy_Vibes.mp3" title="Fobee - Happy Vibes" style="display: none;"></a>
+        <div class="clearfix"><a href="#" class="fmp-previous-button fmp-previous-button-normal"><div class="fmp-previous" style="opacity: 0.8;"></div></a><a href="#" class="fmp-pp-button fmp-play-button-normal"><div class="fmp-play"></div></a><a href="#" class="fmp-next-button fmp-next-button-normal"><div class="fmp-next" style="opacity: 0.8;"></div></a><div class="fmp-time-bar"><div class="fmp-time" style="opacity: 0; top: -40px; left: -13px;"><span>00:00</span><div class="fmp-time-arrow-border"></div><div class="fmp-time-arrow"></div></div><div class="fmp-loading-bar" style="width: 26.994457708737656px;"></div><div class="fmp-progress-bar" style="width: 0px;"></div><div class="fmp-time-slider" style="left: -6px;"></div></div><div class="fmp-sound-control"><div class="fmp-volume-button fmp-button-normal"></div><div class="fmp-volume-bar"><div class="fmp-volume-arrow-border"></div><div class="fmp-volume-arrow"></div><div class="fmp-volume-slider"></div><div class="fmp-volume-state-background"><div class="fmp-volume-state"></div></div></div></div></div><div class="fmp-tracks-container clearfix"><div class="fmp-playlist-button fmp-button-normal"></div><span class="fmp-current-title">Fobee - 7th Gate</span></div><div class="fmp-playlist-container" style="height: 100%;"><div class="fmp-playlist-scroll" style="height: 65px; overflow: hidden; padding: 0px; width: 95px;"><div class="jspContainer" style="width: 95px; height: 65px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 95px;"><ul class="fmp-playlist"><li style="margin-top: 0px;"><div class="fmp-delete-track" style="opacity: 0.6;"></div><span class="fmp-track-normal" style="color: rgb(174, 174, 198);">1- Fobee - 7th Gate</span></li><li><div class="fmp-delete-track" style="opacity: 0.6;"></div><span class="fmp-track-normal" style="color: rgb(141, 141, 168);">2- Fobee - Another Sunny Day</span></li><li><div class="fmp-delete-track" style="opacity: 0.6;"></div><span class="fmp-track-normal" style="color: rgb(141, 141, 168);">3- Fobee - Beyond the Horizon</span></li><li><div class="fmp-delete-track" style="opacity: 0.6;"></div><span class="fmp-track-normal" style="color: rgb(141, 141, 168);">4- Fobee - Happy Vibes</span></li></ul></div></div></div></div></section>
+        
+        <div class="divider"></div>
+        
+         <!-- Social bar section -->
+        <section id="social-bar" class="clearfix">
+            <span style="float: left;">STAY IN TOUCH: </span>
+            <div style="margin: 1px 10px 8px; float: left;">
+                <a href="#" title="Become a fan on Facebook"><img src="images/stylico/icons/facebook.png" alt="Facebook"></a>
+                <a href="#" title="Follow me on Twitter"><img src="images/stylico/icons/twitter.png" alt="Twitter"></a>
+                <a href="#" title="Subscribe to my channel at youtube"><img src="images/stylico/icons/video.png" alt="Youtube"></a>
+                <a href="#" title="Extend your circles on Google+"><img src="images/stylico/icons/google.png" alt="Google+"></a>
+                <a href="#" title="Listen to my music on Soundcloud.net"><img src="images/stylico/icons/soundcloud.png" alt="Soundcloud"></a>
+            </div>
+            <div class="clear"></div>
+        </section>
+        
+        <div class="divider"></div>
+        
+         <!-- Copyright or what you want -->
+        <section id="copyright">© 2011 STYLICO, ALL RIGHTS RESERVED</section>
+        
+    </aside>
+    
+    <!-- Main content area -->
+    <section id="main" style="display: block;"><div id="discography">
+    
+    <!-- Some texts -->
+    <div id="info" class="content-box" style="padding-bottom: 25px !important">
+        <h2 class="ribbon clearfix"><div class="ribbon-left"></div><div class="ribbon-center">Discography</div><div class="ribbon-right"></div></h2>
+        <p style="width:70%; float: left;"><span style=" font-size: 12px; font-weight: bold;">Lorem ipsum dolor sit amet</span>, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<br> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+        </p>
+        
+        <img src="images/stylico/divider.png" height="100" width="3" style="margin: 7px 20px 0px; float: left;">
+        
+        <div class="rounded-border"><div class="new-star"></div><img src="images/records/new.jpg" alt="" height="100" class="rounded new rounded-image"></div>
+        
+        <div class="clear"></div>
+    </div>
+    
+    <!-- Singles -->
+    <div id="singles" class="content-box">
+        <h2 class="ribbon clearfix"><div class="ribbon-left"></div><div class="ribbon-center">Singles</div><div class="ribbon-right"></div></h2>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><div class="new-star"></div><img src="images/records/record_01.jpg" alt="" class="rounded new rounded-image"></div> 
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">La Kazan</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-La_Kazan.mp3" title="Fobee - La Kazan" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/la-kazan/292826?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW <span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><img src="images/records/record_02.jpg" alt="" class="rounded rounded-image"></div>
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">Beyond the Horizon</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-Beyond_the_Horizon.mp3" title="Fobee - Beyond the Horizon" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/beyond-the-horizon/400199?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW <span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><img src="images/records/record_03.jpg" alt="" class="rounded rounded-image"></div>
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">Happy Vibes</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-Happy_Vibes.mp3" title="Fobee - Happy Vibes" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/happy-vibes/411562?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW<span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><img src="images/records/record_01.jpg" alt="" class="rounded rounded-image"></div> 
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">La Kazan</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-La_Kazan.mp3" title="Fobee - La Kazan" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/la-kazan/292826?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW <span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><img src="images/records/record_02.jpg" alt="" class="rounded rounded-image"></div>
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">Beyond the Horizon</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-Beyond_the_Horizon.mp3" title="Fobee - Beyond the Horizon" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/beyond-the-horizon/400199?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW <span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><img src="images/records/record_03.jpg" alt="" class="rounded rounded-image"></div>
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">Happy Vibes</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-Happy_Vibes.mp3" title="Fobee - Happy Vibes" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/happy-vibes/411562?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW<span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Mixes -->
+    <div id="mixes" class="content-box">
+        <h2 class="ribbon clearfix"><div class="ribbon-left"></div><div class="ribbon-center">Mixes</div><div class="ribbon-right"></div></h2>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><img src="images/records/record_01.jpg" alt="" class="rounded rounded-image"></div> 
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">7th Gate</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-7th_Gate.mp3" title="Fobee - 7th Gate" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/7th-gate/462028?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW <span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><div class="new-star"></div><img src="images/records/record_02.jpg" alt="" class="rounded new rounded-image"></div>
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">Another Sunny Day</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-Another_Sunny_Day.mp3" title="Fobee - Another Sunny Day" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/another-sunny-day/245185?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW <span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><img src="images/records/record_03.jpg" alt="" class="rounded rounded-image"></div>
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">Happy Vibes</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-Happy_Vibes.mp3" title="Fobee - Happy Vibes" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/happy-vibes/411562?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW<span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><img src="images/records/record_01.jpg" alt="" class="rounded rounded-image"></div> 
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">La Kazan</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-La_Kazan.mp3" title="Fobee - La Kazan" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/la-kazan/292826?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW <span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><div class="new-star"></div><img src="images/records/record_02.jpg" alt="" class="rounded new rounded-image"></div>
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">Beyond the Horizon</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-Beyond_the_Horizon.mp3" title="Fobee - Beyond the Horizon" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/beyond-the-horizon/400199?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW <span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+        <div class="record clearfix">
+            <div class="rounded-border"><img src="images/records/record_03.jpg" alt="" class="rounded rounded-image"></div>
+            <div class="record-text">
+                <span style=" font-size: 15px; font-weight: bold;">Happy Vibes</span><br>
+                <span style=" font-size: 12px;">Fobee</span><br>
+                <span style=" font-size: 11px; color: #707080;">Label Envato</span>
+            </div>
+            <div class="record-buttons">
+                <a href="music/Fobee-Happy_Vibes.mp3" title="Fobee - Happy Vibes" class="play-now" style="width: 55px;">PLAY NOW <span class="record-play"></span></a>
+                <a href="http://audiojungle.net/item/happy-vibes/411562?WT.ac=search_thumb" target="_blank" class="buy-now" style="width: 55px;">BUY NOW<span class="record-buy"></span></a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="clear"></div>
+    
+    <!-- Some Links to music platforms -->
+    <div class="content-box clearfix" style="margin-bottom: 50px !important;">
+        <a href="http://beatport.com" target="_blank" style="margin-left: 60px; margin-right: 50px;"><img src="images/stylico/icons/beatport_logo_color.png" style="vertical-align: middle; padding-right: 3px;"> Vist my Beatport shop</a>
+        <a href="http://soundcloud.com" target="_blank" style="margin-right: 50px;"><img src="images/stylico/icons/soundcloud_orange.png" style="vertical-align: middle; padding-right: 3px;"> Check out my Soundcloud tracks</a>
+        <a href="http://mixcloud.com" target="_blank"><img src="images/stylico/icons/mixcloud.png" style="vertical-align: middle; padding-right: 3px; padding-bottom: 3px;"> Listen to my Mixes at Mixcloud</a>
+    </div>
+    
+</div></section>
+    
+
+<div id="sm2-container" class="movieContainer " style="z-index: 10000; position: absolute; width: 6px; height: 6px; top: -9999px; left: -9999px;"><embed name="sm2movie" id="sm2movie" src="swf/soundmanager2_flash9.swf" quality="high" allowscriptaccess="always" bgcolor="#ffffff" pluginspage="www.macromedia.com/go/getflashplayer" title="JS/Flash audio component (SoundManager 2)" type="application/x-shockwave-flash" haspriority="true"></div></body></html>

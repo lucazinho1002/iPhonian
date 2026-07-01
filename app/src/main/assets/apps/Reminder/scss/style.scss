@@ -1,0 +1,157 @@
+@import "compass/css3";
+
+$red: #F44336;
+$red-sec: #D32F2F;
+
+body {
+  background-color: $red;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+%gooey {
+  filter: url('#the_goo');
+}
+
+.top-nav {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background-color: $red-sec;
+  z-index: 900;
+  
+  .inner-half {
+    @extend %gooey;
+    @include transition(all .5s ease);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $red-sec;
+    transform: transale3d(0,0,0);
+    
+    .circle {
+      @extend %gooey;
+      @include transition(all .25s ease);
+      @include border-radius(50%);
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      left: calc(50% - 30px);
+      top: 0;
+      background-color: $red-sec;
+      color: #fff;
+      text-align: center;
+      font: 100 2em sans-serif;
+      line-height: 1.75em;
+      cursor: pointer;
+      z-index: 20;
+      transform: transale3d(0,0,0);
+    }
+    
+    .new-todo {
+      @extend %gooey;
+      @include transition(all .25s ease);
+      @include border-radius(50%);
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      left: calc(50% - 25px);
+      top: 5px;
+      background-color: $red-sec;
+      color: #fff;
+      text-align: center;
+      font: 100 .1em sans-serif;
+      z-index: 10;
+      cursor: pointer;
+      transform: transale3d(0,0,0);
+    }
+  }
+  
+  &:hover .circle {
+    transform: translateY(40px);
+  }
+  
+  &:hover .new-todo {
+    //transform: translateY(55px);
+  }
+}
+
+.include-new-todo {
+  @extend %gooey;
+  @include transition(all, .25s, ease);
+  @include border-radius(6px);
+  position: fixed;
+  width: 700px;
+  padding: 10px;
+  left: calc(50% - 350px);
+  top: -100px;
+  background-color: $red-sec;
+  z-index: 920;
+  transform: transale3d(0,0,0);
+  
+  .input-todo {
+    @include border-radius(6px 0 0 6px);
+    width: 90%;
+    float: left;
+    padding: 20px 20px;
+    border: 1px solid #C62828;
+    background-color: #FFEBEE;
+    outline-color: #B71C1C;
+    font: 200 1em sans-serif;
+  }
+  
+  .btn-new-todo {
+    @include transition(all, .25s, ease);
+    @include border-radius(0 6px 6px 0);
+    width: 9%;
+    float: left;
+    padding: 22px 10px;
+    background-color: #C62828;
+    color: #FFEBEE;
+    text-align: center;
+    font: 200 .875em sans-serif;
+    outline-color: #B71C1C;
+    border: none;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #B71C1C;
+    }
+  }
+}
+
+.content {
+  position: relative;
+  width: 700px;
+  margin: auto;
+  padding-top: 140px;
+  
+  ul {
+    
+    li {
+      @include border-radius(6px);
+      position: relative;
+      width: 100%;
+      padding: 25px 100px 25px 30px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
+      font: 400 1em sans-serif;
+      overflow: hidden;
+      
+      &:hover:after {
+        content: 'Click to remove';
+        position: absolute;
+        float: right;
+        right: 10px;
+        top: 45%;
+        font: 600 .6em sans-serif;
+        color: $red-sec;
+      }
+    }
+  }
+}
+

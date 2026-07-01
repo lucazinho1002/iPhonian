@@ -1,0 +1,259 @@
+@import "bourbon";
+
+$shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.25);
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+// ::-webkit-scrollbar {
+//   display: none;
+// }
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: "San Francisco";
+  @include transform-style(preserve-3d);
+  @include transform(perspective(1600px));
+  overflow: hidden;
+}
+
+.video-bg {
+  @include position(absolute, 0 0 0 0);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: table;
+  pointer-events: none;
+  opacity: 0;
+  transition: .3s all ease;
+  background: rgba(0,0,0,.6);
+  @include transform(scale(1.1));
+  
+  &.active {
+    opacity: 1;
+    @include transform(scale(1));
+    pointer-events: auto;
+  }
+  
+  .text-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .par {
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    font-size: 20px;
+    opacity: .8;
+  }
+  
+  button {
+    padding: 15px 40px;
+    border: none;
+    font-size: 16px;
+    background: #fff;
+    color: #000;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.25);
+    transition: .2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform;
+    
+    &:hover {
+      @include transform(scale(1.1));
+    }
+    
+    &:active {
+      @include transform(scale(1));
+    }
+    
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.translucent-ctr {
+  @include position(absolute, 0 0 0 0);
+  z-index: 9;
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/yosemite.jpg") no-repeat center center/cover;
+  @include transform(scale(1.2));
+    
+  .translucent {
+    @include position(absolute, 0 0 0 0);
+    background: #f5f5f5;
+    opacity: .5;
+  }
+}
+
+
+.slider-ctr {
+  overflow: scroll;
+  @include position(fixed, 0 0 0 0);
+  scroll-snap-type: proximity;
+  scroll-snap-destination: 30px 0;
+  z-index: 9;
+  
+  &.disabled {
+    pointer-events: none;
+  }
+  
+  .text-content {
+    position: fixed;
+    top: 60px;
+    left: 60px;
+  }
+  
+  .title {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .par {
+    color: #777;
+  }
+}
+
+.slider-scroll {
+  @include position(absolute, 0 0 0 0);
+  width: 3060px;
+  padding: 0 30px;
+  box-sizing: content-box;
+  
+  .slide {
+    width: 340px;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 30px;
+    display: table;
+    scroll-snap-coordinate: 0 0;
+  }
+  
+  figure {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  .image-ctr {
+    width: 100%;
+    position: relative;
+    transition: .2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    will-change: transform;
+    
+    &.disabled {
+      pointer-events: none;
+      transition: none;
+    }
+    
+    &:hover {
+      @include transform(scale(1.2));
+    }
+    
+    figcaption {
+      @include position(absolute, x 0 -40px 0);
+      font-size: 16px;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+      letter-spacing: 1px;
+      opacity: 0;
+      transition: .15s opacity ease;
+    }
+    
+    &:hover figcaption {
+      opacity: 1;
+      transition: .15s opacity ease .1s;
+    }
+  }
+  
+  .image {
+    box-shadow: $shadow;
+    border-radius: 3px;
+    width: 100%;
+    height: 417px;
+    position: relative;
+    background: no-repeat center center / cover;
+    
+    .light {
+      @include position(absolute, 0 0 0 0);
+      z-index: 9;
+      opacity: 0;
+      transition: .15s opacity ease;
+      border-radius: 3px;
+      
+      &.light-on {
+        opacity: 1;
+      }
+    }
+    
+    &:before {
+      content: "";
+      @include position(absolute, 0 0 0 0);
+      box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+      transition: .15s all ease-out;
+      opacity: 0;
+      border-radius: 5px;
+    }
+    
+    &:hover:before {
+      opacity: 1;
+    }
+    
+    &.shawshank {
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/shawshank.jpg");
+    }
+    
+    &.godfather {
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/godfather.jpg");
+    }
+     
+    &.godfather2 {
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/godfather2.jpg");
+    }
+    
+    &.darkknight {
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/darkknight_copy.jpg");
+    }
+    
+    &.twelveangrymen {
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/twelveangrymen.jpg");
+    }
+    
+    &.django {
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/django.jpg");
+    }
+    
+    &.goodbadugly {
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/goodbadugly.jpg");
+    }
+    
+    &.deadpool {
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/deadpool.jpg");
+    }
+    
+    &.wallflower {
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/wallflower.jpg");
+    }
+    
+  }
+}
+
+.copyright {
+  z-index: 99;
+}

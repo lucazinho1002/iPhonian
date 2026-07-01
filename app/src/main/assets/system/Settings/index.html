@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/onsenui.css"/>
+    <link rel="stylesheet" href="css/onsen-css-components.css"/>
+    <script src="js/onsenui.js"></script>
+  
+    <style>
+      
+      ons-splitter-side#menu {
+    border-right-width: 1px;
+    border-right-style: groove;
+}
+        
+        
+    .left.list__item__left {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 11px;
+}
+        
+        img.list__item__icon {
+    width: 28px;
+    height: 28px;
+    padding: 0px;
+}
+      </style>
+    
+    </head>
+
+  <body>
+    
+       <script>
+      
+          
+      
+          function setwall(ss)
+        {
+           
+            //7var BrowserWindow = require('electron').remote.BrowserWindow
+            //alert(BrowserWindow.getTitle());
+            //api.Wallpaper(ss);
+            
+            const app2 = require('electron').remote;
+           app2.getCurrentWindow().webContents.executeJavaScript("changeBg('"+ss+"');");
+            
+            }
+          
+          
+          
+			//$$("#walls img").on("click", function(){
+            //    alert("hello");
+			//var ss = $(this).attr("data");
+			//api.Wallpaper(ss);
+		//	});
+	
+	</script>
+        
+<ons-splitter>
+  <ons-splitter-side id="menu" side="left" width="380px" >
+    <ons-page>
+    
+    <ons-toolbar>
+      <div class="center">
+        Settings
+      </div>
+    </ons-toolbar>
+    <br /><br />
+    <ons-list>    
+    <ons-list-item>
+      <div class="left">
+        <img src="icons/airplane.png" class="list__item__icon">
+      </div>
+      <div class="center">
+        Airplaine Mode
+      </div>
+      <div class="right">
+        <ons-switch></ons-switch>
+      </div>
+    </ons-list-item>
+    <ons-list-item>
+      <div class="left">
+       <img src="icons/wifi.png" class="list__item__icon">
+      </div>
+      <div class="center">
+        Wi-Fi
+      </div>
+    </ons-list-item>
+    <ons-list-item>
+      <div class="left">
+        <img src="icons/bluetooth.png" class="list__item__icon">
+      </div>
+      <div class="center">
+        Bluetooth
+      </div>
+    </ons-list-item>
+    <ons-list-item>
+      <div class="left">
+        <img src="icons/sim.png" class="list__item__icon">
+          
+      </div>
+      <div class="center">
+        Mobile Data
+      </div>
+    </ons-list-item>
+        </ons-list>
+        
+        <br />
+        <br />
+        <ons-list>
+    <ons-list-item>
+      <div class="left">
+       <img src="icons/general.png" class="list__item__icon">
+      </div>
+      <div class="center">
+        General
+      </div>
+    </ons-list-item>
+            
+    <ons-list-item>
+      <div class="left">
+        <img src="icons/wallpaper.png" class="list__item__icon">
+      </div>
+      <div class="center">
+        Wallpaper
+      </div>
+    </ons-list-item>
+            
+   
+        
+    <ons-list-item>
+      <div class="left">
+        <img src="icons/sound.png" class="list__item__icon">
+      </div>
+      <div class="center">
+        Sound
+      </div>
+    </ons-list-item>    
+            
+    <ons-list-item>
+      <div class="left">
+        <img src="icons/ID.png" class="list__item__icon">
+      </div>
+      <div class="center">
+        PassCode
+      </div>
+    </ons-list-item>    
+            <ons-list-item>
+      <div class="left">
+        <img src="icons/battrey.png" class="list__item__icon">
+      </div>
+      <div class="center">
+        Battery
+      </div>
+    </ons-list-item>   
+             
+            
+  </ons-list>
+        
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+</ons-splitter>
+
+<ons-template id="home.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        
+      </div>
+      <div class="center">
+        Wallpapers
+      </div>
+    </ons-toolbar>
+      </br>
+     </br>
+     <ons-list modifier="inset">
+    <ons-list-item onclick="setwall('bg/0.jpg')">
+      <div class="left">
+        <img class="list__item__thumbnail" src="../../bg/0.jpg">
+      </div>
+      <div class="center">
+        <span class="list__item__title">iOS 9</span><span class="list__item__subtitle">Default</span>
+      </div>
+    </ons-list-item>
+         
+         <ons-list-item onclick="setwall('bg/1.jpg')">
+      <div class="left">
+        <img class="list__item__thumbnail" src="../../bg/1.jpg">
+      </div>
+      <div class="center">
+        <span class="list__item__title">iOS 9</span><span class="list__item__subtitle">Default</span>
+      </div>
+    </ons-list-item>
+         
+         <ons-list-item onclick="setwall('bg/2.jpg')">
+      <div class="left">
+        <img class="list__item__thumbnail" src="../../bg/2.jpg">
+      </div>
+      <div class="center">
+        <span class="list__item__title">iOS 10</span><span class="list__item__subtitle">Default</span>
+      </div>
+    </ons-list-item>
+         
+         <ons-list-item onclick="setwall('bg/3.jpg')">
+      <div class="left">
+        <img class="list__item__thumbnail" src="../../bg/3.jpg">
+      </div>
+      <div class="center">
+        <span class="list__item__title">iOS 5</span><span class="list__item__subtitle">Default</span>
+      </div>
+    </ons-list-item>
+         
+         <ons-list-item onclick="setwall('bg/4.jpg')">
+      <div class="left">
+        <img class="list__item__thumbnail" src="../../bg/4.jpg">
+      </div>
+      <div class="center">
+        <span class="list__item__title">iOS 6</span><span class="list__item__subtitle">Default</span>
+      </div>
+    </ons-list-item>
+         
+          <ons-list-item onclick="setwall('bg/10.jpg')">
+      <div class="left">
+        <img class="list__item__thumbnail" src="../../bg/10.jpg">
+      </div>
+      <div class="center">
+        <span class="list__item__title">iOS 10</span><span class="list__item__subtitle">Default</span>
+      </div>
+    </ons-list-item>
+         
+      </ons-list>
+  </ons-page>
+</ons-template>
+
+<ons-template id="settings.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Settings
+      </div>
+    </ons-toolbar>
+  </ons-page>
+</ons-template>
+
+<ons-template id="about.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        About
+      </div>
+    </ons-toolbar>
+  </ons-page>
+</ons-template>
+      
+      
+  </body>
+</html>

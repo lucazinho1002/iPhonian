@@ -1,0 +1,64 @@
+<style>
+    body{
+    margin: 0px;
+        background: #EFEFEF;
+    }    
+header {
+    display: block;
+    height: 100px;
+    background-color: rgba(247, 247, 247, 0.72);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    backdrop-filter: blur(10px);
+}
+
+tools {
+    display: block;
+    height: 62px;
+      display: grid;
+    grid-template-columns: 35px 35px 35px auto 35px 35px 35px;  
+
+}
+    
+tabs {
+    background-color: rgba(228, 229, 231, 0.47);
+    height: 37px;
+    display: block;
+} 
+
+url {
+    width: 100%;
+    height: 30px;
+    background: rgba(113, 112, 109, 0.3);
+    grid-column: 4;
+    border-radius: 11px;
+    margin-top: 6px;
+}    
+
+.add {
+   margin: 3px;
+    margin-top: 5px;
+    display: block;
+    font-family: sans-serif;
+    margin-left: 6px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    width: 100%;
+}    
+    
+</style>
+<header>
+<tools>
+    
+<url>
+<input class="add" type="url"/>    
+</url>    
+</tools>
+<tabs></tabs>
+
+</header>
+
+<webview class="view" frameborder="0" width="100%" height="100%" src="http://www.androck.co"></webview>

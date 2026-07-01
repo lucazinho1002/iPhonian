@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+<style>
+body{
+	margin:0px;
+	-webkit-user-select:none;
+	-webkit-text-size-adjust:none;
+	-webkit-box-sizing:border-box;
+	background:url(video.jpg);
+	background-size:cover;
+}
+</style>
+	</head>
+	<body>
+
+
+	</body>
+</html>

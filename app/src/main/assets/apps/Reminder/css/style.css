@@ -1,0 +1,142 @@
+body {
+  background-color: #F44336;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.top-nav .inner-half, .top-nav .inner-half .circle, .top-nav .inner-half .new-todo, .include-new-todo {
+  -webkit-filter: url("#the_goo");
+          filter: url("#the_goo");
+}
+
+.top-nav {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background-color: #D32F2F;
+  z-index: 900;
+}
+.top-nav .inner-half {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #D32F2F;
+  -webkit-transform: transale3d(0, 0, 0);
+          transform: transale3d(0, 0, 0);
+}
+.top-nav .inner-half .circle {
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  border-radius: 50%;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: calc(50% - 30px);
+  top: 0;
+  background-color: #D32F2F;
+  color: #fff;
+  text-align: center;
+  font: 100 2em sans-serif;
+  line-height: 1.75em;
+  cursor: pointer;
+  z-index: 20;
+  -webkit-transform: transale3d(0, 0, 0);
+          transform: transale3d(0, 0, 0);
+}
+.top-nav .inner-half .new-todo {
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: calc(50% - 25px);
+  top: 5px;
+  background-color: #D32F2F;
+  color: #fff;
+  text-align: center;
+  font: 100 .1em sans-serif;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-transform: transale3d(0, 0, 0);
+          transform: transale3d(0, 0, 0);
+}
+.top-nav:hover .circle {
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+}
+
+.include-new-todo {
+  -webkit-transition: all, 0.25s, ease;
+  transition: all, 0.25s, ease;
+  border-radius: 6px;
+  position: fixed;
+  width: 700px;
+  padding: 10px;
+  left: calc(50% - 350px);
+  top: -100px;
+  background-color: #D32F2F;
+  z-index: 920;
+  -webkit-transform: transale3d(0, 0, 0);
+          transform: transale3d(0, 0, 0);
+}
+.include-new-todo .input-todo {
+  border-radius: 6px 0 0 6px;
+  width: 90%;
+  float: left;
+  padding: 20px 20px;
+  border: 1px solid #C62828;
+  background-color: #FFEBEE;
+  outline-color: #B71C1C;
+  font: 200 1em sans-serif;
+}
+.include-new-todo .btn-new-todo {
+  -webkit-transition: all, 0.25s, ease;
+  transition: all, 0.25s, ease;
+  border-radius: 0 6px 6px 0;
+  width: 9%;
+  float: left;
+  padding: 22px 10px;
+  background-color: #C62828;
+  color: #FFEBEE;
+  text-align: center;
+  font: 200 .875em sans-serif;
+  outline-color: #B71C1C;
+  border: none;
+  cursor: pointer;
+}
+.include-new-todo .btn-new-todo:hover {
+  background-color: #B71C1C;
+}
+
+.content {
+  position: relative;
+  width: 700px;
+  margin: auto;
+  padding-top: 140px;
+}
+.content ul li {
+  border-radius: 6px;
+  position: relative;
+  width: 100%;
+  padding: 25px 100px 25px 30px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  font: 400 1em sans-serif;
+  overflow: hidden;
+}
+.content ul li:hover:after {
+  content: 'Click to remove';
+  position: absolute;
+  float: right;
+  right: 10px;
+  top: 45%;
+  font: 600 .6em sans-serif;
+  color: #D32F2F;
+}

@@ -1,0 +1,24 @@
+.video-bg
+  .text-content
+    .par That's it folks, thanks for coming!<br>Follow me for more awesome interaction like this in the future.
+    button.close Go back
+
+.translucent-ctr
+  .translucent
+
+.slider-ctr
+  .text-content
+    .title Select Movies
+    .par.detail Scroll horizontally to navigate
+  .slider-scroll
+    - for(i=0;i<9;i++)
+    
+      - var moviesClass = ["deadpool", "godfather", "goodbadugly", "darkknight", "godfather2", "twelveangrymen", "django", "wallflower", "shawshank"]
+      - var moviesName = ["Deadpool", "The Godfather", "The Good, Bad, and Ugly", "The Dark Knight", "The Godfather 2", "12 Angry Men", "Django Unchained", "The Perks of being Wallflower", "Shawshank Redemption"]
+
+      .slide
+        figure
+          .image-ctr
+            .image("class" = "#{moviesClass[i]}", "data-index" = "#{i}")
+              .light
+            figcaption #{moviesName[i]}

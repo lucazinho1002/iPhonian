@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Minimalistic to-do list with Gooey effect</title>
+    
+    
+    <link rel="stylesheet" href="css/reset.css">
+
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+    
+  </head>
+
+  <body>
+
+    <header class="top-nav">
+  <div class="inner-half">
+    <section id="add_list">
+      <div id="add_list" class="circle">+</div>
+      <div class="new-todo"><br/>New<br/>to-do</div>
+    </section>
+    
+    <section class="include-new-todo">
+      <input class="input-todo" type="text" placeholder="Your new to-do here..." />
+      <button id="confirm_new_todo" type="button" class="btn-new-todo">Add</button>  
+    </section>
+    
+  </div>
+
+</header>
+
+
+
+<section id="content" class="content">
+  <ul>
+    <li class="list-todo-item">Your first nice to-do! Add another one. :)</li>
+  </ul>
+</section>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="the_goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="the_goo" />
+      <feComposite in="SourceGraphic" in2="the_goo" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+  </body>
+</html>

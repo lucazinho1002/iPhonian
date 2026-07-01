@@ -1,0 +1,476 @@
+@font-face {
+  font-family: "San Francisco2";
+  font-weight: 100;
+  src: url("../assets/fonts/SF-UI-Text-Ultrathin.otf");
+}
+
+@font-face {
+  font-family: "San Regular";
+  font-weight: 100;
+  src: url("../assets/fonts/SF-UI-Text-Regular.otf");
+}
+
+body{
+font-family: "San Francisco2";
+}
+
+bg{
+position: absolute;
+
+     background:url(../bg/10.jpg);
+background-size: cover;
+    top:0px;
+    bottom : 0px;
+    right:0px;
+    left: 0px;
+    transition: all 0.3s;
+}
+
+main {
+	
+	background-image: linear-gradient(rgba(6, 6, 6, 0.5), rgba(0, 0, 0, 0.5));
+	cursor: ew-resize;
+    overflow: hidden;
+    position: absolute;
+    left:0px;
+	right:0px;
+	top:22px;
+	bottom:40px;
+	z-index: 1000000;
+	display:none;
+    
+}
+
+.app {
+	left: 0;
+	pointer-events: none;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    will-change: transform;
+}
+
+.app span {
+	color: white;
+	display: block;
+	letter-spacing: 0.5px;
+	line-height: 24px;
+	padding: 0 0 10px 0;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.app span img {
+	height: 24px;
+	margin-right: 5px;
+	vertical-align: middle;
+	width: 24px;
+}
+
+.app > img {
+	border-radius: 6px;
+	box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.4);
+	height: 100%;
+	width: 100%;
+}
+
+
+
+
+
+/* A bit of demo styles */;
+.swiper-container {
+  height: 100%;
+  margin-top:40px;
+  margin-bottom:100px;
+}
+.swiper-slide {
+  background:transparent;
+      
+}
+.swiper-slide span {
+  text-align:center;
+  display:block;
+  margin:20px;
+  font-size:21px;
+}
+
+
+.page-content {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    height: 400px; 
+    position: relative;
+    z-index: 1;
+    top:25px;
+    
+	left:0px;
+	right:0px;
+}
+
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #fff;
+}
+
+.swiper-pagination{
+
+}
+
+blur{
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 100%); /* W3C */
+    -Webkit-filter: blur(5px);
+    position: absolute;
+    bottom: 40px;
+	
+}
+
+blur2{
+    width: 100%;
+    height: 120px;
+    background-color: rgba(255,255,255,.3);
+   
+    position: absolute;
+    bottom: 40px;
+	text-align: center;
+}
+
+
+#iPadianTitle {
+color: white;
+font-size: 12px;
+font-weight: bold;
+left: 4px;
+position: absolute;
+top: 3px;
+}
+
+#topi{
+display: inline-block;
+height: 20px;
+position: fixed;
+top: 0;
+width: 100%;
+left: 0px;
+right: 0px;
+}
+
+#ctls {
+overflow: auto;
+position: absolute;
+right: 0px;
+top: 2px;
+display: none;
+}
+
+
+#classic {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.30);
+    position: fixed;
+    bottom: 0;
+    z-index: 100000;
+    /* background: url(../bg/bg.png); */
+    left: 0px;
+    right: 0px;
+    backdrop-filter: blur(10px);
+}
+
+
+#RDesktop {
+position: fixed;
+right: 0px;
+bottom:0px;
+-webkit-transition: background 0.5s;
+z-index: 1000000;
+display:none;
+}
+
+#RDesktop img {
+margin-top: 7px;
+margin-left: 15px;
+}
+
+.iconsformat {
+display: inline-block;
+width: 50px;
+height: 40px;
+overflow: auto;
+float: left;
+-webkit-transition: background 0.5s;
+}
+#start{
+
+margin-left:0px;
+}
+
+#start img {
+margin-top: 3px;
+margin-left: 9px;
+}
+
+#RBrowser img {
+margin-top: 8px;
+margin-left: 11px;
+}
+
+#Rmusic img {
+margin-top: 8px;
+margin-left: 11px;
+}
+
+#Rmail img {
+margin-top: 12px;
+margin-left: 11px;
+}
+
+
+/* #dock .icona{
+-webkit-box-shadow: 1px 3px 23px rgba(0, 0, 0, 0.3) inset;
+} */
+#dock ul {
+	position: relative;
+	display: inline-block;
+	padding: 0 5px;
+	margin: 0;
+	
+	width:100%;
+}
+
+/* Creates the left and right end caps of the dock. You may not need these
+when creating your own dock. */
+#dock ul:before, .dock ul:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 31px;
+}
+#dock ul:before {
+	left: -31px;
+	
+}
+#dock ul:after {
+	right: -31px;
+	
+}
+/* @end */
+
+/* @group Items */
+/* Defines a dock item. Note the `-webkit-box-reflect` property which creates a nice
+reflection below the item. The gradient is a mask in order to exlcude the status
+indicator from the reflection. */
+#dock li {
+	 list-style: none;
+    
+	
+	/*-webkit-box-reflect: below -10px -webkit-gradient(  linear, left top, left bottom,  from(transparent),  color-stop(98%, rgba(255, 255, 255, 0.4)),  color-stop(98.01%, transparent),  to(transparent)  );
+	*/
+	}
+#dock a {
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+}
+/* Applies the bounce animation to the targeted dock item.  */
+#dock li:target a {
+ -webkit-animation: bounce .3s 6 alternate ease-out;
+ -moz-animation: bounce .3s 6 alternate ease-out;
+}
+
+
+#dock em {
+	position: absolute;
+	top: -34px;
+	left: 50%;
+	display: none;
+	width: 150px;
+	margin-left: -75px;
+	text-align: center;
+}
+/* Generates the little arrow at the bottom of the label. */
+#dock em:after {
+	content: " ";
+	position: absolute;
+	bottom: -6px;
+	left: 50%;
+	margin-left: -6px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid rgba(0, 0, 0, .6);
+	border-bottom: none;
+}
+/* This is the actual label. */
+#dock em span {
+	display: inline-block;
+	padding: 5px 12px;
+	font-size: 14px;
+	font-style: normal;
+	color: #FFF;
+	background: #000;
+	background: rgba(0, 0, 0, .6);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .9);
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-o-border-radius: 12px;
+	border-radius: 12px;
+}
+#dock li:hover em {
+	display: block;
+}
+/* @end */
+
+/* @group Icon */
+/* Sets the icons to a smaller width so they can be enlarged and applies
+transitions for a smooth animation. Make sure to adjust the width so it 
+matches your images. */
+
+ul {
+	padding-left:0px;
+	margin-left:0px;
+	-webkit-padding-start: 0px;
+	margin:0px;
+}
+.icona {
+	width: 72px;
+	height: 72px;
+	display:block;
+	-webkit-border-radius: 10px;
+	-webkit-background-size: cover;
+	/*-webkit-box-shadow: 3px 14px 35px rgba(0, 0, 0, 0.52);*/
+	transition: all 0.1s linear;
+
+}
+cast {
+	display:inline-block;
+	width:71px;
+	height:71px;
+	/*-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);*/
+	-webkit-border-radius: 15px;
+	
+}
+
+
+
+#dock cast{
+-webkit-box-shadow:0px 2px 1px rgba(0, 0, 0, 0.3);
+position: relative;
+top: -72px;
+width: 75px;
+}
+
+
+#dock a p {
+    display: block;
+    font-size: 15px;
+    font-style: normal;
+    color: #FFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .9);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -o-border-radius: 12px;
+    border-radius: 12px;
+    width: 100%;
+    text-align: center;
+    margin-top: 1px;
+    
+}
+
+#dock .icona {
+
+/*-webkit-box-reflect: below -10px -webkit-gradient( linear, left top, left bottom, from(transparent), color-stop(98%, rgba(255, 255, 255, 0.4)), color-stop(98.01%, transparent), to(transparent) );
+*/
+margin: -13px;
+margin-left: 12px;
+margin-top: -6px;
+
+
+}
+
+#dock a {
+display: inline-block;
+cursor: pointer;
+outline: none;
+background:none;
+width: 90px;    
+}
+
+.imgicon {
+    border-radius: 23px;
+    -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
+    
+}
+ #swip ul {
+padding:40px;
+}
+
+   #dockapps .myButton {
+        
+        display:inline-block;
+        color:#ffffff;
+        
+        font-size:15px;
+        font-weight:normal;
+        padding:11px 23px;
+        text-decoration:none;
+        
+        text-shadow:0px 1px 0px #263666;
+		float: left;
+        -webkit-transition: background 0.5s;
+    }
+   #dockapps .myButton:hover {
+        
+        /*background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+        
+        background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);*/
+        
+		
+		-webkit-transition: background 0.5s; /* Safari and Chrome */
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+		 /* Safari and Chrome */
+    }
+
+	#dockapps .select{
+	
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+	background-color:#0688fa;
+	background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	
+	position:relative;
+    top:1px;
+	
+	}
+	
+	#dockapps a.myButton img {
+margin-left: -15px;
+margin-right: 9px;
+margin-top: -1px;
+float: left;
+}
+
+
+
+
+  .bottoma{
+        
+            margin-top:  5px;
+            display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      
+        text-align: center;
+         
+        
+        
+        }
+    

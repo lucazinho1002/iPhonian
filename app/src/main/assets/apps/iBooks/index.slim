@@ -1,0 +1,2 @@
+transition-group name="fade" tag="div" class="flex" :css="false" appear="" v-on:before-enter="beforeItemEnters" v-on:enter="whenItemEnters"
+  book v-for="(book, index) in books.artbooks" :key="book.id" :title="book.title" :subtitle="book.subtitle" :description="book.description" :image="book.image" :groove="book.groove" :book-styles="book.bookStyles" :obi-styles="book.obiStyles" :data-index="index"

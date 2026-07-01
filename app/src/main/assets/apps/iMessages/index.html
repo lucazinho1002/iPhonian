@@ -1,0 +1,605 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../../css/framework7.ios.min.css">
+<link rel="stylesheet" href="../../css/framework7.ios.colors.min.css">
+<link rel="stylesheet" href="../../css/framework7-icons.css">
+<link rel="stylesheet" href="../../css/my-app.css">
+<script src="jquery-min.js"></script>
+
+<script type="text/javascript" src="../../js/framework7.min.js"></script>
+<script type="text/javascript" src="../../js/my-app.js"></script>
+<script>
+    
+    
+    
+    
+    
+    var myApp = new Framework7();
+    var $$ = Dom7;
+        
+    
+    
+    $( document ).ready(function() {
+   
+        
+        if (localStorage.activate) {
+            connect();
+            getContacts();
+            
+        } else {
+            var myApp = new Framework7();
+            myApp.popup('.first_page');
+        }
+        
+        //myApp.popup('.first_page');
+       
+        // connect();
+        
+        
+        
+         
+
+        
+    });
+ 
+    function activate(){
+        
+        
+         var phone = $('#phone').val(),     
+ intRegex = /[0-9 -()+]+$/;
+if((phone.length < 9) || (!intRegex.test(phone)))
+{
+     var myApp = new Framework7();
+    myApp.alert('iMessages','Please enter a valid phone number.');
+     return false;
+}
+        
+  else{      
+        
+        
+        var ff = $("#phone").val(); 
+        var em = $("#email").val();
+        firebase.database().ref('users').child(ff).set(
+          {phone:ff, email:em}
+        );
+         var myApp = new Framework7();
+        myApp.closeModal('.first_page');  
+        localStorage.activate = 1;
+        localStorage.phone = ff;
+        localStorage.email = em;
+        connect();
+        getContacts();
+      myApp.openPanel('left');
+  }
+  }
+    
+    
+    function savecontact(){
+        
+   var phone = $('#phone2').val(),     
+ intRegex = /[0-9 -()+]+$/;
+if((phone.length < 9) || (!intRegex.test(phone)))
+{
+     var myApp = new Framework7();
+    myApp.alert('iMessages','Please enter a valid phone number.');
+     return false;
+}
+        
+  else{      
+        var ff = $("#phone2").val(); 
+        var em = $("#email2").val();
+        firebase.database().ref('users').child(ff).set(
+          {phone:ff, email:em}
+        );
+      
+      var myApp = new Framework7();
+        myApp.closeModal('.newcontact'); 
+        myApp.openPanel('left');
+  }
+    }
+    
+    function connect(){
+    // Get Conversations   
+    console.log("fdf");
+       ref =  firebase.database().ref('conv/'+localStorage.phone);
+        //$("#conv").html("");
+       
+        
+        ref.on("value", function(snapshot) {
+        console.log(snapshot.val());
+           $("#conv").html("");
+           snapshot.forEach(function(v) {
+               
+               var obj = v.val(); 
+               var players = Object.keys(obj).map(key => {return obj[key]});  
+               
+               // get index
+               var ak = $.map(obj, function(value, index) {return [index];});
+               
+               console.log(ak);
+               dd = new Date().toLocaleTimeString('en-US', { hour12: false, 
+                                             hour: "numeric", 
+                                         minute: "numeric"});
+               
+               cls = "";
+               var cc = $("#msg").attr("datanum");
+               if(cc == ak) cls = "actives";
+          // html = '<li id="'+ak+'" dsd="'+v.key+'" class="'+cls+'"><a href="#" class="item-link item-content"><i class="f7-icons">person</i><div class="item-inner"><div class="item-title-row"><div id="nm'+ak[0]+'" class="item-title numo">'+ak[0]+'</div><div class="item-after">'+dd+'</div></div><div class="item-subtitle">'+v.val().lastmsg+'</div></div></a></li>';
+               
+               
+               html = '<li id="'+ak+'" dsd="'+v.key+'" class="'+cls+'"><a href="#" class="item-link item-content"><i class="f7-icons">person</i><div class="item-inner"><div class="item-title-row"><div id="nm'+ak[0]+'" class="item-title numo">'+v.key+'</div><div class="item-after">'+dd+'</div></div><div class="item-subtitle">'+v.val().lastmsg+'</div></div></a></li>';
+               
+              // players[0].lastmsg
+           $("#conv").append(html);
+             });  
+       });    
+    }
+    
+    
+    function connect2(){
+    // Get Conversations   
+    console.log("fdf");
+       ref =  firebase.database().ref('chats/0687346990627861128');
+       ref.on("value", function(snapshot) {
+        console.log(snapshot.val());
+           snapshot.forEach(function(v) {
+           html = '<li><a href="#" class="item-link item-content"><div class="item-inner"><div class="item-title-row"><i class="f7-icons">person_fill</i><div class="item-title numo">'+v.key+'</div><div class="item-after">17:14</div></div><div class="item-subtitle">'+v.val().lastmsg+'</div></div></a></li>';
+           $("#conv").append(html);
+             });  
+       });    
+    }
+    
+    function send(v){
+    // send Message
+    
+       
+        firebase.database().ref('chats').child(v).push(
+         {m1:"ffff"}
+        );
+        
+    }
+    
+    
+    function getChat(k){
+        
+        $("#messageslist").html("");
+    // Get Chat by id Conversation
+
+  /* firebase.database().ref('chats/'+k).once("value", function(ss) {
+        console.log(ss);
+           ss.forEach(function(childSnapshot) {
+               //console.log(childSnapshot);
+               $("#messageslist").append("<p>"+childSnapshot.val().m1+"</p>");
+           });
+           
+           
+           
+           }); 
+        
+        */
+        firebase.database().ref('chats/'+k).on("child_added", function(ss) {
+        console.log(ss);
+                
+            var obj = ss.val(); 
+            var players = Object.keys(obj).map(key => {return obj[key]});  
+            var array = $.map(obj, function(value, index) {
+    return [index];
+            });
+            
+            console.log(array[0]);
+            var style = "message-received";
+            if(array[0] == localStorage.phone) style = "message-sent";
+            
+          mm =  '<div class="message '+style+'"><div class="message-text">'+players+'</div></div>';
+               $("#messageslist").append(mm);
+            
+        $('.page-content').scrollTop(500);
+           
+            
+           }); 
+        
+        
+        
+    }
+    
+    
+     $(document).on("click",".pluss", function() { 
+        
+         var myApp = new Framework7();
+            myApp.popup('.newcontact');
+        
+    });
+    
+    
+    $(document).on("click","#sendit", function() { 
+		
+        sendbtn();
+     });	
+    
+    
+    function sendbtn(){
+    
+            
+        to = $("#msg").attr("datanum");
+        tocon = $("#msg").attr("data");
+        dataid = $("#msg").attr("dataid");
+        txt = $("#msg").val();
+        firebase.database().ref('chats').child(tocon).push(
+         {[localStorage.phone]:txt}
+        );
+        
+        console.log(dataid);
+        
+        var ref = firebase.database().ref("conv/"+localStorage.phone);
+        
+        ref.child(to).set({"lastmsg":txt});
+        
+        var ref = firebase.database().ref("conv/"+to);
+        
+        ref.child(localStorage.phone).set({"lastmsg":txt});
+        
+        
+        //firebase.database().ref('conv').child(localStorage.phone).child(dataid).update({"lastmsg": txt});
+        //firebase.database().ref('conv').child(to).child(dataid).update({"lastmsg": txt});
+        
+        txt = $("#msg").val("");
+    
+    }
+    
+    function getContacts(){
+    
+        ref =  firebase.database().ref('users');
+       ref.on("value", function(snapshot) {
+        console.log(snapshot.val());
+           $("#contacts").html("");
+           snapshot.forEach(function(v) {
+           html = '<li><div class="item-content"><div class="item-inner"><div class="item-title"><i class="f7-icons">person_fill</i> <name>'+v.val().email+'</name><ph>'+v.val().phone+'</ph></div></div></div></li>';
+           $("#contacts").append(html);
+             });  
+       });    
+    
+    }
+    
+    
+    $(document).on("click","#conv li", function() {  
+        $("#conv li").removeClass("actives");
+        $(this).addClass("actives");
+        var num = parseInt($(this).find(".numo").text());
+        var me = parseInt(localStorage.phone);
+        var idconv = $(this).find(".numo").text()+""+localStorage.phone
+        if(num > me) idconv = localStorage.phone+""+$(this).find(".numo").text()
+        
+        //myApp.alert(idconv);
+        
+        // Create Conversation
+        $("#msg").attr("data",idconv);
+        $("info").text(" "+$(this).find(".numo").text()); 
+        $("#msg").attr("datanum",$(this).find(".numo").text());
+        $("#msg").attr("dataid",$(this).attr("dsd")); 
+        //alert($(this).attr("dsd"));
+        //firebase.database().ref('conv/').child($(this).find(".numo").text()).set({
+        //  [localStorage.phone]:{read:0, lastmsg:""}
+        //                                                });
+        
+        
+        getChat(idconv);
+        
+        
+        }); 
+        
+        // Create conversation for user from directory 
+        $(document).on("click","#contacts li", function() {  
+        
+        
+        var num = parseInt($(this).find("ph").text());
+        var me = parseInt(localStorage.phone);
+        var idconv = $(this).find("ph").text()+""+localStorage.phone
+        if(num > me) idconv = localStorage.phone+""+$(this).find("ph").text()
+        
+        //myApp.alert(idconv);
+        var t = $(this).find("ph").text();
+        // Create Conversation
+        $("#msg").attr("data",idconv);
+        $("info").text(" "+$(this).find("ph").text());    
+        $("#msg").attr("datanum",$(this).find("ph").text());
+        $("#msg").attr("dataid",$(this).attr("dsd"));    
+        
+        if($("#"+t).length == 0){  
+          
+       
+            
+        //firebase.database().ref('conv/').child(t).push({
+        //  [localStorage.phone]:"",lastmsg:""
+        //                                                });
+            
+        //firebase.database().ref('conv/').child(localStorage.phone).push({
+        //  [$(this).find("ph").text()]:"",lastmsg:""
+        //                                                });  
+        
+        
+        }
+            
+        var ref = firebase.database().ref("conv/"+localStorage.phone);
+        
+        ref.child(t).set({"lastmsg":""});
+        
+        var ref = firebase.database().ref("conv/"+t);
+        
+        ref.child(localStorage.phone).set({"lastmsg":""});    
+        
+        var myApp = new Framework7();
+        getChat(idconv);
+        myApp.closePanel();
+        
+        }); 
+    
+    
+    
+           //$('#msg').on('keypress', function (e) {
+        $(document).on("keypress","#msg", function(e) { 
+           
+         if(e.which === 13){
+             e.preventDefault();
+             sendbtn();
+          
+         }
+    });
+    
+</script>
+
+<style>
+
+    .view-left {
+    float: left;
+    width: 320px;
+    border-right: 1px solid #b2b2b2;
+}
+.view-main {
+    width: -webkit-calc(100% - 321px);
+    width: -moz-calc(100% - 321px);
+    width: -ms-calc(100% - 321px);
+    width: calc(100% - 321px);
+}
+    
+.popup.first_page.modal-in {
+    background-color: #f7f7f8;
+}    
+    
+    .drop{
+    
+    background-color: white;
+    backdrop-filter: blur(10px);    
+    }   
+    
+    .actives{
+    
+        background-color: rgb(247, 247, 248);
+    
+    }    
+    
+    i.f7-icons {
+    margin-right: 10px;
+}
+    
+    .popup {
+    box-shadow: 0px 0px 23px -3px rgba(171, 171, 171, 0.79);
+}
+
+
+.numo {
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+
+</style>
+
+
+
+
+<div class="panel drop panel-left panel-cover">
+     <div class="navbar">
+<div class="navbar-inner">
+<div class="left"> </div>
+<div class="center">Contacts</div>
+<div class="right"><a href="#" class="link icon-only pluss" ><i class="icon icon-plus">+</i></a></div>
+</div>
+</div>
+<div class="list-block">
+<div class="list-group">
+      <ul id="contacts">
+        
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="popup first_page">
+    
+    <div class="navbar">
+<div class="navbar-inner">
+<div class="left"> </div>
+<div class="center">iMessage Activation</div>
+<div class="right"></div>
+</div>
+</div>
+    
+    
+         <div class=" block-content list-block">
+       
+              <div class="content-block-title">YOU CAN BE REACHED BY IMESSAGES AT</div>
+    <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Phone Number</div>
+          <div class="item-input">
+            <input type="number" pattern="[0-9]{10}" required="required" id="phone" name="name" placeholder="+XX XXXXXX">
+          </div>
+        </div>
+        </div>
+        </li> 
+        
+         <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Display Name</div>
+          <div class="item-input">
+            <input type="text" name="name" id="email" placeholder="Joe Smith">
+          </div>
+        </div>
+        </div>
+        </li>  
+        
+       
+        
+  </ul>
+            <div class="content-block">
+<p> <a href="#" class="button active"  onclick="activate()">Active iMessages</a></p>
+</div>
+
+    </div>
+</div>    
+
+
+
+<div class="popup newcontact">
+    
+    <div class="navbar">
+<div class="navbar-inner">
+<div class="left"> </div>
+<div class="center">New Contact</div>
+<div class="right"> </div>
+</div>
+</div>
+    
+    
+         <div class=" block-content list-block">
+       
+              <div class="content-block-title">Register New Contact</div>
+    <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Phone Number</div><pk>+</pk>
+          <div class="item-input">
+            <input type="number" pattern="[0-9]{10}" required="required" id="phone2" name="name2" placeholder="XXXXXXXX">
+          </div>
+        </div>
+        </div>
+        </li> 
+        
+         <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Display Name</div>
+          <div class="item-input">
+            <input type="text" name="name" id="email2" placeholder="Joe Smith">
+          </div>
+        </div>
+        </div>
+        </li>  
+        
+       
+        
+  </ul>
+            <div class="content-block">
+<p> <a href="#" class="button active"  onclick="savecontact()">Save</a></p>
+</div>
+
+    </div>
+</div>  
+
+
+
+<div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <!-- Views -->
+    <div class="views">
+      <!-- Left view -->
+      <div class="view view-left navbar-through">
+        <div class="navbar">
+           <div class="navbar-inner">
+        <div class="left"><a href="#">Edit</a>
+
+</div>
+        <div class="center">Conversations</div>
+        <div class="right contact-add-link">
+<a href="#" class="link icon-only open-panel" ><i class="icon f7-icons">compose</i></a>
+</div>
+    </div>
+        </div>
+        <div class="pages">
+          <div data-page="index-left" class="page">
+            <div class="page-content">
+              <div class="list-block">
+                <div class="content-block-title"></div>
+<div class="list-block media-list">
+  <ul id="conv">
+ 
+  </ul>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main view (right) -->
+      <div class="view view-main navbar-through">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+                <div class="chip">
+<i class="icon f7-icons">person</i>
+<div class="chip-label"><info>Messages</info></div>
+</div>
+    
+                
+                
+                </div>
+            
+          </div>
+        </div>
+        <!-- Pages-->
+        <div class="pages">
+          <!-- Page, data-page contains page name-->
+            <div data-page="messages" class="page no-toolbar toolbar-fixed">
+                <div class="toolbar messagebar">
+                    <div class="toolbar-inner"><a href="#" id="sendPhoto" class="link icon-only"><i class="icon icon-camera"></i></a>
+                        <textarea id="msg" rows="1" placeholder="Message"></textarea><a href="#" id="sendit" class="link">Send</a>
+                        <input id="msg" type="hidden">
+                    </div>
+                </div>
+                <div class="page-content messages-content">
+                    
+                    
+                    <div id="messageslist"
+                         class="messages">
+                    
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC3-TuTuThvIKDydfUcn0Xt-f2ZHSTrK5c",
+    authDomain: "imessage-493cc.firebaseapp.com",
+    databaseURL: "https://imessage-493cc.firebaseio.com",
+    storageBucket: "imessage-493cc.appspot.com",
+    messagingSenderId: "345684552920"
+  };
+  firebase.initializeApp(config);
+    // Get a reference to the database service
+
+    
+</script>

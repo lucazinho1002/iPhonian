@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>iPadian iOS 10</title>
+    
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="css/celular.css">
+    
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+     
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="owl-carousel/owl.carousel.js"></script>
+</head>
+
+<body>
+    <bg></bg>
+    
+    <div id="topi">
+        <div id="iPadianTitle"><img src="bg/bar.png"></div>
+        <div id="ctls" style="display: none;">
+            <a href="#" id="Bprv"><img src="icons/n1.png"/></a>
+            <a href="#" id="Bnxt"><img src="icons/n2.png"/></a>
+            <a href="#" onclick="closeWin()" id="qt"><img src="icons/quite.png"/></a>
+            <a href="#" onclick="closeApp()" id="closeme"><img src="icons/close.png"/></a>
+        </div>
+    </div>
+
+    <div class="page-content">
+       <div id="owl-demo" class="owl-carousel">
+            </div>
+    </div>
+	
+    <div id="dockapps"></div>
+    <div id="start"></div>
+    <blur></blur>
+    <blur2></blur2>
+
+    <div id="dock-bg">
+        <div id="dock-bgi">
+            <ul id="dock" class="dock-inferior">
+                <li><a href="#" data-url="apps/Browser/index.html" data-type="apps" data-name="Browser"><div class="imgicon" style="background-image: url(apps/Browser/icon.png);"></div></a></li>
+                <li><a href="#" data-url="apps/Mail/index.html" data-type="apps" data-name="Mail"><div class="imgicon" style="background-image: url(apps/Mail/icon.png);"></div></a></li>
+                <li><a href="#" data-url="apps/Music/index.html" data-type="apps" data-name="Music"><div class="imgicon" style="background-image: url(apps/Music/icon.png);"></div></a></li>
+                <li><a href="#" data-url="apps/AppStore/index.html" data-type="apps" data-name="AppStore"><div class="imgicon" style="background-image: url(apps/AppStore/icon.png);"></div></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <main id="multitask-view"></main>
+
+    <script src="js/code.js"></script>
+	
+    <script>
+    $( document ).ready(function() {
+        // Dispara a leitura mapeada
+        readapp();	
+    		
+        $(document).on("click", ".grido li, .dock-inferior li", function() {  
+    		var title = $(this).find("a").attr("data-name");
+    		var url = $(this).find("a").attr("data-url");
+    		var icon = $(this).find("a").attr("data-type");
+    		if($("#" + title).length == 0) {
+    			openapp(icon, title, url);
+                transs(10);
+    		}
+    	});
+    	
+    	$( "#start" ).click(function() {
+    		homescreen();
+    	});	
+    });
+    </script>
+</body>
+</html>

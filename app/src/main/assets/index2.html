@@ -1,0 +1,327 @@
+<title>iPadian iOS 10</title>
+<head>
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/my-app.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="owl-carousel/owl.carousel.js"></script>
+</head>
+
+<main id="multitask-view"></main>
+
+<body>
+<bg id="hallo"></bg>
+<div id="topi">
+<time>12:00 PM</time>    
+<div id="iPadianTitle"><img src="bg/bar.png"></div>
+<div id="ctls">
+<a href="#" id="Bprv" ><img class="tools" src="icons/n2.png"/></a>
+<a href="#" id="Bnxt" ><img class="tools" src="icons/n1.png"/></a>
+<a href="#" onclick="closeApp()" id="closeme" ><img class="tools" src="icons/close.png"/></a>
+</div>
+</div>
+
+<style>
+    body{
+        -webkit-user-select:none; 
+    }
+    
+    img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+    }
+    
+    time {
+        color: white;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .9);
+        display: inline-block;
+        width: 100%;
+        margin-top: 2px;
+        text-align: center;
+        font-family: "San Regular";
+    }
+    
+    a.myButton img {
+        border-radius: 7px;
+    }
+    
+    a#qt {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .tools {
+        height: 20px;
+        filter: brightness(40);
+    }
+    
+    .pago{
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 10px;
+    } 
+    
+    #owl-demo{
+        position: absolute;
+        top: 40px;
+        bottom: 140px;
+        left: 10px;
+        right: 10px;
+    }
+    
+    .grido {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 6px; 
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .grido li {
+        list-style: none;
+    }
+    
+    .owl-theme .owl-controls {
+        margin-top: -10px;
+        text-align: center;
+    }
+    .slick-slide {outline: none;}
+    
+    .slick-dots li {
+        background: white;
+        border-radius: 13px ;
+        width: 10px !important ;
+        height: 10px !important ;
+    }
+    
+    .slick-dots li button:before {
+        width: 10px !important;
+        color: rgba(255, 255, 255, 0);
+        height: 10px !important;
+        margin-top: 0px;
+        margin-left: 0px;
+        background: white;
+        border-radius: 5px;
+    }
+    
+    .imgicon {
+        width: 60px;
+        height: 60px;
+        box-shadow: none;
+        background-size: cover;
+        background-color: white;
+    }
+    
+    header {
+        display: block;
+        height: 81px;
+        background-color: rgba(247, 247, 247, 0.72);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        backdrop-filter: blur(10px);
+        z-index: 1000000000;
+    }
+
+    tools {
+        display: block;
+        height: 42px;
+        display: grid;
+        grid-template-columns: 55px 55px 55px auto 55px 55px 55px;  
+    }
+    
+    tabs {
+        background-color: rgba(228, 229, 231, 0.47);
+        height: 37px;
+        display: block;
+        display: none;
+    } 
+
+    url {
+        width: 100%;
+        height: 30px;
+        background: rgba(113, 112, 109, 0.3);
+        grid-column: 4;
+        border-radius: 11px;
+        margin-top: -38px;
+    }    
+
+    .add {
+        margin: 3px;
+        margin-top: 5px;
+        display: block;
+        font-family: sans-serif;
+        margin-left: 6px;
+        border: none;
+        background: transparent;
+        font-size: 14px;
+        width: 100%;
+        background-image: url(system/Browser/icon/loading.png);
+        background-repeat: no-repeat;
+        background-size: 17px 17px;
+        background-position-y: 1px;
+        background-position-x: 98%;
+    } 
+    
+    browser{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    tools img{
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+    }
+    
+    .b1 {
+        grid-column: 1;
+        height: 24px;
+        width: 24px;
+        margin-top: 4px;
+    }
+    
+    .b2 {
+        grid-column: 2;
+        height: 24px;
+        width: 24px;
+        margin-top: 4px;
+    }
+    
+    .b3 { grid-column: 3; }
+    .b4 { grid-column: 5; }
+    
+    .b5 {
+        grid-column: 6;
+        height: 24px;
+        width: 24px;
+        margin-top: 4px;
+    }
+    .b6 {
+        grid-column: 7;
+        height: 24px;
+        width: 24px;
+        margin-top: 4px;
+    }
+    
+    .bottoma {
+        height: 90px !important;
+        padding-top: 10px !important;
+        padding-bottom: 5px !important;
+    }
+    
+    blur2 {
+        backdrop-filter: blur(10px);
+    }
+</style>
+    
+<div id="owl-demo" class="owl-carousel">
+    <div class="pago">
+        <ul id="dock" class="grido"></ul>
+    </div> 
+    
+    <div class="pago">
+        <ul id="dock" class="grido">
+           <li><a href="#" data-url="system/Flipboard/index.html" data-type="system" data-name="Flipboard"> <div class="imgicon" style="background-image: url(system/Flipboard/icon.png);" ></div><p>Flipboard</p></a></li>
+           <li><a href="#" data-url="system/Whatsapp/index.html" data-type="system" data-name="Whatsapp"> <div class="imgicon" style="background-image: url(system/Whatsapp/icon.png);" ></div><p>Whatsapp</p></a></li>
+        </ul>
+    </div> 
+</div>
+
+<blur2>
+<ul id="dock" class="bottoma">
+    <li><a href="#" data-url="system/Browser/index.html" data-type="system" data-name="Browser" ><img class="imgicon" src="system/Browser/icon.png" /><p>Browser</p></a></li>
+	<li><a href="#" data-url="system/Mail/index.html" data-type="system" data-name="Mail" ><img class="imgicon" src="system/Mail/icon.png" /><p>Mail</p></a></li>
+	<li><a href="#" data-url="system/Music/index.html" data-type="system" data-type="st" data-name="Music" ><img class="imgicon" src="system/Music/icon.png" /><p>Music</p></a></li>
+	<li><a href="#" data-url="system/Settings/index.html" data-type="system" data-type="st" data-name="Settings" ><img class="imgicon" src="system/Settings/icon.png" /><p>Settings</p></a></li>
+	<li><a href="#" data-url="system/Photos/index.html" data-type="system" data-type="st" data-name="Photos" ><img class="imgicon" src="system/Photos/icon.png" /><p>Photos</p></a></li>
+</ul> 
+</blur2>
+
+<div id="classic" class="tabs">
+<a href="#" id="start" class="iconsformat" ><img src="icons/start.png"/></a>
+<div id="dockapps" ></div>
+<a href="#" onclick="closeWin()" id="qt" ><img class="tools" src="icons/quite.png"/></a>    
+</div>
+
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+<link href="assets/js/jquery-ui.min.css">    
+<script src="js/code.js"></script>
+	
+<script>
+    var initstate = "";
+    
+    function changeBg(ss){
+        $("bg").css("background","url('"+ss+"')");
+        $("bg").css("background-size","cover");    
+    } 
+    
+    function reboot(){
+        $("#owl-demo").html(initstate);
+        readapp();
+        owl();
+    }
+    
+    function owl(){
+        $("#owl-demo").owlCarousel({
+            paginationSpeed : 1000,
+            goToFirstSpeed : 2000,
+            singleItem : true,
+            nav:true,
+            transitionStyle:"fade"
+        });
+    }
+    
+    $(document).ready(function() {
+        initstate = $("#owl-demo").html();
+        $("#owl-demo").owlCarousel({
+            paginationSpeed : 1000,
+            goToFirstSpeed : 2000,
+            singleItem : true,
+            nav:true,
+            transitionStyle:"fade"
+        });
+    });
+</script>
+	
+<script>
+    $( document ).ready(function() {
+		readapp();	
+		
+        $(document).on( "click","#dock li", function() {  
+			title = $(this).find("a").attr("data-name");
+			url = $(this).find("a").attr("data-url");
+			icon = $(this).find("a").attr("data-type");
+			if($("#" + title).length == 0) {
+				openapp(icon,title,url);
+                transs(10);
+			}
+		});
+		
+		$( "#start" ).click(function() { homescreen(); });	
+        
+        $( "#Bprv" ).click(function() {
+            t = $("webview:visible").attr('id');
+            const webview = document.getElementById(t);
+			webview.goBack();
+		});	
+        
+        $( "#Bnxt" ).click(function() {
+            t = $("webview:visible").attr('id');
+            const webview = document.getElementById(t);
+			webview.goForward();
+		});	
+	});
+</script>
+</body>
